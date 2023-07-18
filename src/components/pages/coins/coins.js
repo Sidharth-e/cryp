@@ -16,10 +16,10 @@ const CoinGrid = ({ searchvalue }) => {
     const fetchCoins = async () => {
       try {
         const response1 = await axios.get(
-          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=1}&per_page=250`
+          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=1}&per_page=200`
         );
         const response2 = await axios.get(
-          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=2}&per_page=150`
+          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=2}&per_page=200`
         );
         const [res1, res2] = await Promise.all([response1, response2]);
 
