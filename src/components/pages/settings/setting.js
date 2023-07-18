@@ -3,7 +3,7 @@ import "./setting.scss";
 import { useState } from "react";
 
 export default function Setting() {
-  const defaultCurrency = "inr";
+  const defaultCurrency = "INR";
   const [currency, setCurrency] = useState(localStorage.getItem("currency") || defaultCurrency);
 
   const handleCurrencyChange = (event) => {
@@ -28,9 +28,9 @@ export default function Setting() {
             value={currency}
             onChange={handleCurrencyChange}
           >
-            <option value="inr">INR</option>
-            <option value="usd">USD</option>
-            <option value="eur">EUR</option>
+            <option value="INR">INR</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
           </select>
         </div>
         <button className="default-btn" onClick={handleSetToDefault}>Set to Default</button>
