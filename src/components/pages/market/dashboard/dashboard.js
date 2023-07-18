@@ -7,7 +7,7 @@ function Marketdashboard({ searchvalue }) {
   const [coins, setCoins] = useState([]);
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(true);
-  const currency = localStorage.getItem("currency");
+  const currency = localStorage.getItem('currency');
   const tableRef = useRef(null);
 
   useEffect(() => {
@@ -28,7 +28,9 @@ function Marketdashboard({ searchvalue }) {
   };
 
   const scrollToTable = () => {
-    tableRef.current.scrollIntoView({ behavior: 'smooth' });
+    if (tableRef.current) {
+      tableRef.current.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   if (loading) {
@@ -82,4 +84,4 @@ function Marketdashboard({ searchvalue }) {
   );
 }
 
-export default  Marketdashboard;
+export default Marketdashboard;

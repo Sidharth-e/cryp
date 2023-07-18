@@ -3,7 +3,7 @@ import "./coins.scss";
 import Loader from "../../loader/loader";
 import Heading from "../../heading/heading";
 
-const CoinGrid = ({ searchvalue }) => {
+const CoinGrid = ( {searchvalue} ) => {
   console.log(searchvalue);
   const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(true);

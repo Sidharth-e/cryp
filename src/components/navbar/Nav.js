@@ -201,7 +201,7 @@ export default function Navbar() {
           {activePage === "market" && <Market searchvalue={search} />}
           {activePage === "coins" && <Coins searchvalue={search} />}
           {activePage === "settings" && <Settings />}
-          {activePage === "test" && <Test />}
+          {activePage === "test" && <Test searchvalue={search} />}
           {activePage==="trade" && <Trade/>}
         </main>
       </section>
