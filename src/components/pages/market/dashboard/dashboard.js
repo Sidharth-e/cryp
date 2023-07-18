@@ -15,7 +15,7 @@ function Marketdashboard({ searchvalue }) {
     const fetchCoins = async () => {
       try {
         const response = await axios.get(
-          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=${page}&per_page=100`
+          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=${page}&per_page=250`
         );
         setCoins(response.data);
         setLoading(false);
