@@ -11,6 +11,7 @@ import Market from "../pages/market/market";
 import Coins from "../pages/coins/coins";
 import Settings from "../pages/settings/setting";
 import Trade from '../pages/trade/trade';
+import Logo from '../asset/logo.png'
 
 export default function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -96,7 +97,7 @@ export default function Navbar() {
       <section id="sidebar" className={isSidebarOpen ? "hide" : ""}>
         <a href="/#" className="brand">
           <i className="bx">
-            <FaBitcoin />
+            <img src={Logo} alt="logo" style={{width:30}}/>
           </i>
           <span className="text">CRYPIY</span>
         </a>
