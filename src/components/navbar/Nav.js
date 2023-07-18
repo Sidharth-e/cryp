@@ -24,7 +24,7 @@ export default function Navbar() {
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
-  const [activePage, setActivePage] = useState("market");
+  const [activePage, setActivePage] = useState("coins");
   const switchPage = (page) => {
     setActivePage(page);
   };
@@ -101,20 +101,20 @@ export default function Navbar() {
           <span className="text">CRYPIY</span>
         </a>
         <ul className="side-menu top">
+        <li className={activePage === "coins" ? "active" : ""}>
+            <a href="/#" onClick={() => switchPage("coins")}>
+              <i className="bx">
+                <FaBitcoin />
+              </i>
+              <span className="text">Coins</span>
+            </a>
+          </li>
           <li className={activePage === "market" ? "active" : ""}>
             <a href="/#" onClick={() => switchPage("market")}>
               <i className="bx bxs-dashboard">
                 <BsFillFileEarmarkBarGraphFill size={20} />
               </i>
               <span className="text">Market</span>
-            </a>
-          </li>
-          <li className={activePage === "coins" ? "active" : ""}>
-            <a href="/#" onClick={() => switchPage("coins")}>
-              <i className="bx">
-                <FaBitcoin />
-              </i>
-              <span className="text">Coins</span>
             </a>
           </li>
           <li className={activePage === "trade" ? "active" : ""}>
