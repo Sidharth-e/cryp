@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./coins.scss";
+import axios from 'axios';
 import Loader from "../../loader/loader";
 import Heading from "../../heading/heading";
 import { motion, AnimatePresence } from "framer-motion";
@@ -12,18 +13,24 @@ const CoinGrid = ({ searchvalue }) => {
   useEffect(() => {
     setIsLoading(true);
 
-    fetch(
-      `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&per_page=250`
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setCoins(data);
+    const fetchCoins = async () => {
+      try {
+        const response1 = await axios.get(
+          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=1}&per_page=250`
+        );
+        const response2 = await axios.get(
+          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=2}&per_page=250`
+        );
+        const [res1, res2] = await Promise.all([response1, response2]);
+
+        const combinedCoins = [...res1.data, ...res2.data];
+        setCoins(combinedCoins);
         setIsLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setIsLoading(false);
-      });
+      } catch (error) {
+        console.error(error);
+      }
+    };
+    fetchCoins();
   }, [currency]);
 
   const filteredCoins =
