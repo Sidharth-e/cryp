@@ -9,6 +9,7 @@ function Marketdashboard({ searchvalue }) {
   const [loading, setLoading] = useState(true);
   const currency = localStorage.getItem('currency');
   const tableRef = useRef(null);
+  const searchterm=searchvalue.searchvalue
 
   useEffect(() => {
     const fetchCoins = async () => {
@@ -36,6 +37,9 @@ function Marketdashboard({ searchvalue }) {
   if (loading) {
     return <Loader />;
   }
+  const filteredCoins = coins && Array.isArray(coins) ? coins.filter(
+    (coin) => coin.name.toLowerCase().includes(searchterm.toLowerCase())
+  ) : [];
 
   return (
     <div>
@@ -53,7 +57,7 @@ function Marketdashboard({ searchvalue }) {
             <th scope="col">Price change 24h</th>
             {/* Add more table headers for additional details */}
           </tr>
-          {coins.map((coin) => (
+          {filteredCoins.map((coin) => (
             <tr key={coin.id}>
               <td data-th="#">{coin.market_cap_rank}</td>
               <td data-th="Logo">
