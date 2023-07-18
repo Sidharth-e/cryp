@@ -59,7 +59,7 @@ const CryptoPrice = () => {
     <div>
       <Heading name={"Live Trade"} />
 
-      <select value={selectedSymbol} onChange={handleSymbolChange}>
+      <select className="select-coin" value={selectedSymbol} onChange={handleSymbolChange}>
         {symbols.map((symbol) => (
           <option key={symbol} value={symbol}>
             {symbol}
@@ -67,9 +67,9 @@ const CryptoPrice = () => {
         ))}
       </select>
       {priceDetails ? (
-        <table>
-          <thead>
-            <tr>
+        <table  class="rwd-table">
+          <tbody>
+          <tr>
               <th scope="col">Price</th>
               <th scope="col">Price change</th>
               <th scope="col">Price change percent</th>
@@ -83,8 +83,6 @@ const CryptoPrice = () => {
               <th scope="col">Low price</th>
               <th scope="col">Total number of trades</th>
             </tr>
-          </thead>
-          <tbody>
             <tr>
               <td data-label="Price">{priceDetails.c}</td>
               <td data-label="Price change">{priceDetails.p}</td>

@@ -33,7 +33,7 @@ export default function Setting() {
             <option value="eur">EUR</option>
           </select>
         </div>
-        <button onClick={handleSetToDefault}>Set to Default</button>
+        <button className="default-btn" onClick={handleSetToDefault}>Set to Default</button>
       </div>
     </>
   );

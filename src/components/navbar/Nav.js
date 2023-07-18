@@ -10,8 +10,7 @@ import {
 import Market from "../pages/market/market";
 import Coins from "../pages/coins/coins";
 import Settings from "../pages/settings/setting";
-import Test from '../test/test'
-import Trade from '../pages/trade/trade'
+import Trade from '../pages/trade/trade';
 
 export default function Navbar() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -99,7 +98,7 @@ export default function Navbar() {
           <i className="bx">
             <FaBitcoin />
           </i>
-          <span className="text">CRYP</span>
+          <span className="text">CRYPIY</span>
         </a>
         <ul className="side-menu top">
           <li className={activePage === "market" ? "active" : ""}>
@@ -124,14 +123,6 @@ export default function Navbar() {
                 <BsCurrencyExchange />
               </i>
               <span className="text">Live Trade</span>
-            </a>
-          </li>
-          <li className={activePage === "test" ? "active" : ""}>
-            <a href="/#" onClick={() => switchPage("test")}>
-              <i className="bx">
-                <FaBitcoin />
-              </i>
-              <span className="text">test</span>
             </a>
           </li>
         </ul>
@@ -199,7 +190,6 @@ export default function Navbar() {
           {activePage === "market" && <Market searchvalue={search} />}
           {activePage === "coins" && <Coins searchvalue={search} />}
           {activePage === "settings" && <Settings />}
-          {activePage === "test" && <Test searchvalue={search} />}
           {activePage==="trade" && <Trade/>}
         </main>
       </section>

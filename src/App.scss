@@ -441,6 +441,7 @@ a{
 	justify-content: space-between;
 	grid-gap: 16px;
 	flex-wrap: wrap;
+	margin-left: 18px;
 }
 #content main .head-title .left h1 {
 	font-size: 36px;
@@ -863,85 +864,145 @@ a{
 		left: 55%;
 	  }
 }
-table {
-    border: 1px solid #ccc;
-    border-collapse: collapse;
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    // table-layout: fixed;
-	border-radius: 10px;
+
+
+
+.rwd-table {
+	margin: auto;
+	min-width: 300px;
+	max-width: 100%;
+	border-collapse: collapse;
+	margin-top: 15px;
+	margin-left: 15px;
   }
   
-  table caption {
-    font-size: 1.5em;
-    margin: .5em 0 .75em;
+  .rwd-table tr:first-child {
+	border-top: none;
+	background: #428bca;
+	color: #fff;
   }
   
-  table tr {
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
-    padding: .35em;
+  .rwd-table tr {
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	background-color: #f5f9fc;
   }
   
-  table th,
-  table td {
-    padding: .625em;
-    text-align: center;
+  .rwd-table tr:nth-child(odd):not(:first-child) {
+	background-color: #ebf3f9;
   }
   
-  table th {
-    font-size: .85em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
+  .rwd-table th {
+	display: none;
   }
   
-  @media screen and (max-width: 600px) {
-    table {
-      border: 0;
-    }
-  
-    table caption {
-      font-size: 1.3em;
-    }
-    
-    table thead {
-      border: none;
-      clip: rect(0 0 0 0);
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      padding: 0;
-      position: absolute;
-      width: 1px;
-    }
-    
-    table tr {
-      border-bottom: 3px solid #ddd;
-      display: block;
-      margin-bottom: .625em;
-    }
-    
-    table td {
-      border-bottom: 1px solid #ddd;
-      display: block;
-      font-size: .8em;
-      text-align: right;
-    }
-    
-    table td::before {
-      /*
-      * aria-label has no advantage, it won't be read inside a table
-      content: attr(aria-label);
-      */
-      content: attr(data-label);
-      float: left;
-      font-weight: bold;
-      text-transform: uppercase;
-    }
-    
-    table td:last-child {
-      border-bottom: 0;
-    }
+  .rwd-table td {
+	display: block;
   }
   
+  .rwd-table td:first-child {
+	margin-top: .5em;
+  }
+  
+  .rwd-table td:last-child {
+	margin-bottom: .5em;
+  }
+  
+  .rwd-table td:before {
+	content: attr(data-th) ": ";
+	font-weight: bold;
+	width: 120px;
+	display: inline-block;
+	color: #000;
+  }
+  
+  .rwd-table th,
+  .rwd-table td {
+	text-align: left;
+  }
+  
+  .rwd-table {
+	color: #333;
+	border-radius: 1rem;
+	overflow: hidden;
+  }
+  
+  .rwd-table tr {
+	border-color: #bfbfbf;
+  }
+  
+  .rwd-table th,
+  .rwd-table td {
+	padding: .5em 1em;
+  }
+  @media screen and (max-width: 601px) {
+	.rwd-table tr:nth-child(2) {
+	  border-top: none;
+	}
+  }
+  @media screen and (min-width: 600px) {
+	.rwd-table tr:hover:not(:first-child) {
+	  background-color: #d8e7f3;
+	}
+	.rwd-table td:before {
+	  display: none;
+	}
+	.rwd-table th,
+	.rwd-table td {
+	  display: table-cell;
+	  padding: .25em .5em;
+	}
+	.rwd-table th:first-child,
+	.rwd-table td:first-child {
+	  padding-left: 0;
+	}
+	.rwd-table th:last-child,
+	.rwd-table td:last-child {
+	  padding-right: 0;
+	}
+	.rwd-table th,
+	.rwd-table td {
+	  padding: 1em !important;
+	}
+  }
+  
+  
+  /* THE END OF THE IMPORTANT STUFF */
+  
+  /* Basic Styling */
+  // body {
+  // background: #4B79A1;
+  // background: -webkit-linear-gradient(to left, #4B79A1 , #283E51);
+  // background: linear-gradient(to left, #4B79A1 , #283E51);        
+  // }
+  h1 {
+	text-align: center;
+	font-size: 2.4em;
+	color: #f2f2f2;
+  }
+  .container {
+	display: block;
+	text-align: center;
+  }
+
+  
+  /*
+	  Don't look at this last part. It's unnecessary. I was just playing with pixel gradients... Don't judge.
+  */
+  /*
+  @media screen and (max-width: 601px) {
+	.rwd-table tr {
+	  background-image: -webkit-linear-gradient(left, #428bca 137px, #f5f9fc 1px, #f5f9fc 100%);
+	  background-image: -moz-linear-gradient(left, #428bca 137px, #f5f9fc 1px, #f5f9fc 100%);
+	  background-image: -o-linear-gradient(left, #428bca 137px, #f5f9fc 1px, #f5f9fc 100%);
+	  background-image: -ms-linear-gradient(left, #428bca 137px, #f5f9fc 1px, #f5f9fc 100%);
+	  background-image: linear-gradient(left, #428bca 137px, #f5f9fc 1px, #f5f9fc 100%);
+	}
+	.rwd-table tr:nth-child(odd) {
+	  background-image: -webkit-linear-gradient(left, #428bca 137px, #ebf3f9 1px, #ebf3f9 100%);
+	  background-image: -moz-linear-gradient(left, #428bca 137px, #ebf3f9 1px, #ebf3f9 100%);
+	  background-image: -o-linear-gradient(left, #428bca 137px, #ebf3f9 1px, #ebf3f9 100%);
+	  background-image: -ms-linear-gradient(left, #428bca 137px, #ebf3f9 1px, #ebf3f9 100%);
+	  background-image: linear-gradient(left, #428bca 137px, #ebf3f9 1px, #ebf3f9 100%);
+	}
+  }*/

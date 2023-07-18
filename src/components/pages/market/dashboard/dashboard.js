@@ -39,9 +39,9 @@ function Marketdashboard({ searchvalue }) {
 
   return (
     <div>
-      <table ref={tableRef}>
-        <thead>
-          <tr>
+      <table ref={tableRef} className="rwd-table">
+        <tbody>
+        <tr>
             <th scope="col">#</th>
             <th scope="col">Logo</th>
             <th scope="col">Name</th>
@@ -53,21 +53,19 @@ function Marketdashboard({ searchvalue }) {
             <th scope="col">Price change 24h</th>
             {/* Add more table headers for additional details */}
           </tr>
-        </thead>
-        <tbody>
           {coins.map((coin) => (
             <tr key={coin.id}>
-              <td data-label="#">{coin.market_cap_rank}</td>
-              <td data-label="Logo">
+              <td data-th="#">{coin.market_cap_rank}</td>
+              <td data-th="Logo">
                 <img className="image" src={coin.image} alt={coin.name} />
               </td>
-              <td data-label="Name">{coin.name}</td>
-              <td data-label="Symbol">{coin.symbol}</td>
-              <td data-label="Market cap">{coin.market_cap}</td>
-              <td data-label="Current price">{coin.current_price}</td>
-              <td data-label="High 24h">{coin.high_24h}</td>
-              <td data-label="Low 24h">{coin.low_24h}</td>
-              <td data-label="Price change 24h">{coin.price_change_24h}</td>
+              <td data-th="Name">{coin.name}</td>
+              <td data-th="Symbol">{coin.symbol}</td>
+              <td data-th="Market cap">{coin.market_cap}</td>
+              <td data-th="Current price">{coin.current_price}</td>
+              <td data-th="High 24h">{coin.high_24h}</td>
+              <td data-th="Low 24h">{coin.low_24h}</td>
+              <td data-th="Price change 24h">{coin.price_change_24h}</td>
 
               {/* Add more table cells for additional details */}
             </tr>

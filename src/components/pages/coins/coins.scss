@@ -40,22 +40,23 @@
   }
 
   .card {
-    border-radius: 4px;
+    border-radius: 10px;
     padding: 16px;
-    background-color: #f8f8f8;
-    box-shadow: 0 2px 10px rgba(0,0,0,.1);
-    .image{
-         position: relative;
-    z-index: 100;
-    width: 67px;
-    top: -36px;
-    border-radius: 30px;
+    background-image: linear-gradient(to bottom, #3c91e6, #2980b9);
+    box-shadow: inset 20px -2px 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    height: 15rem;
+    .image {
+      position: relative;
+      z-index: 100;
+      width: 67px;
+      top: -36px;
+      border-radius: 30px;
     }
   }
 
   .card-header {
     margin-bottom: 8px;
-    
   }
 
   .card-body {
