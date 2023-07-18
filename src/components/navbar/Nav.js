@@ -4,11 +4,9 @@ import { FaBars, FaBitcoin } from "react-icons/fa6";
 import { BsFillFileEarmarkBarGraphFill,BsCurrencyExchange } from "react-icons/bs";
 import {
   AiOutlineSearch,
-  AiFillBell,
   AiOutlineClose,
   AiFillSetting,
 } from "react-icons/ai";
-import { RxAvatar } from "react-icons/rx";
 import Market from "../pages/market/market";
 import Coins from "../pages/coins/coins";
 import Settings from "../pages/settings/setting";
@@ -97,7 +95,7 @@ export default function Navbar() {
   return (
     <>
       <section id="sidebar" className={isSidebarOpen ? "hide" : ""}>
-        <a className="brand">
+        <a href="/#" className="brand">
           <i className="bx">
             <FaBitcoin />
           </i>
@@ -105,7 +103,7 @@ export default function Navbar() {
         </a>
         <ul className="side-menu top">
           <li className={activePage === "market" ? "active" : ""}>
-            <a onClick={() => switchPage("market")}>
+            <a href="/#" onClick={() => switchPage("market")}>
               <i className="bx bxs-dashboard">
                 <BsFillFileEarmarkBarGraphFill size={20} />
               </i>
@@ -113,7 +111,7 @@ export default function Navbar() {
             </a>
           </li>
           <li className={activePage === "coins" ? "active" : ""}>
-            <a onClick={() => switchPage("coins")}>
+            <a href="/#" onClick={() => switchPage("coins")}>
               <i className="bx">
                 <FaBitcoin />
               </i>
@@ -121,7 +119,7 @@ export default function Navbar() {
             </a>
           </li>
           <li className={activePage === "trade" ? "active" : ""}>
-            <a onClick={() => switchPage("trade")}>
+            <a href="/#" onClick={() => switchPage("trade")}>
               <i className="bx">
                 <BsCurrencyExchange />
               </i>
@@ -129,7 +127,7 @@ export default function Navbar() {
             </a>
           </li>
           <li className={activePage === "test" ? "active" : ""}>
-            <a onClick={() => switchPage("test")}>
+            <a href="/#" onClick={() => switchPage("test")}>
               <i className="bx">
                 <FaBitcoin />
               </i>
@@ -139,7 +137,7 @@ export default function Navbar() {
         </ul>
         <ul className="side-menu">
           <li className={activePage === "settings" ? "active" : ""}>
-            <a onClick={() => switchPage("settings")}>
+            <a href="/#" onClick={() => switchPage("settings")}>
               <i className="bx bxs-cog">
                 <AiFillSetting />
               </i>
@@ -159,7 +157,7 @@ export default function Navbar() {
           <button className="sidebar-toggle" onClick={toggleSidebar}>
             <FaBars />
           </button>
-          <a className=" nav-link">Categories</a>
+          <a href="/#" className=" nav-link">Categories</a>
           <form action="#">
             <div className="form-input">
               <input
