@@ -57,7 +57,7 @@ const CryptoPrice = () => {
 
   return (
     <div>
-      <Heading name={"Live Trade"} />
+      <Heading name={"Live Trade Price"} />
 
       <select className="select-coin" value={selectedSymbol} onChange={handleSymbolChange}>
         {symbols.map((symbol) => (
@@ -84,18 +84,18 @@ const CryptoPrice = () => {
               <th scope="col">Total number of trades</th>
             </tr>
             <tr>
-              <td data-label="Price">{priceDetails.c}</td>
-              <td data-label="Price change">{priceDetails.p}</td>
-              <td data-label="Price change percent">{priceDetails.P}</td>
-              <td data-label="Last quantity">{priceDetails.Q}</td>
-              <td data-label="Best bid price">{priceDetails.b}</td>
-              <td data-label="Best bid quantity">{priceDetails.B}</td>
-              <td data-label="Best ask price">{priceDetails.a}</td>
-              <td data-label="Best ask quantity">{priceDetails.A}</td>
-              <td data-label="Open price">{priceDetails.o}</td>
-              <td data-label="High price">{priceDetails.h}</td>
-              <td data-label="Low price">{priceDetails.l}</td>
-              <td data-label="Total number of trades">{priceDetails.n}</td>
+              <td data-th="Price">{priceDetails.c}</td>
+              <td data-th="Price change">{priceDetails.p}</td>
+              <td data-th="Price change percent">{priceDetails.P}</td>
+              <td data-th="Last quantity">{priceDetails.Q}</td>
+              <td data-th="Best bid price">{priceDetails.b}</td>
+              <td data-th="Best bid quantity">{priceDetails.B}</td>
+              <td data-th="Best ask price">{priceDetails.a}</td>
+              <td data-th="Best ask quantity">{priceDetails.A}</td>
+              <td data-th="Open price">{priceDetails.o}</td>
+              <td data-th="High price">{priceDetails.h}</td>
+              <td data-th="Low price">{priceDetails.l}</td>
+              <td data-th="Total number of trades">{priceDetails.n}</td>
             </tr>
           </tbody>
         </table>
