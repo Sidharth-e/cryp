@@ -11,21 +11,21 @@ function Marketdashboard({ searchvalue }) {
   const tableRef = useRef(null);
 
   useEffect(() => {
-    fetchCoins();
-  }, [page]);
+    const fetchCoins = async () => {
+      try {
+        const response = await axios.get(
+          `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=${page}&per_page=100`
+        );
+        setCoins(response.data);
+        setLoading(false);
+        scrollToTable(); // Scroll to the top of the table after updating coins
+      } catch (error) {
+        console.error(error);
+      }
+    };
 
-  const fetchCoins = async () => {
-    try {
-      const response = await axios.get(
-        `https://api.coingecko.com/api/v3/coins/markets?vs_currency=${currency}&page=${page}&per_page=100`
-      );
-      setCoins(response.data);
-      setLoading(false);
-      scrollToTable(); // Scroll to the top of the table after updating coins
-    } catch (error) {
-      console.error(error);
-    }
-  };
+    fetchCoins();
+  }, [currency, page]); // Include 'currency' and 'page' in the dependency array
 
   const scrollToTable = () => {
     if (tableRef.current) {

@@ -7,7 +7,6 @@ const CoinGrid = ( {searchvalue} ) => {
   console.log(searchvalue);
   const [coins, setCoins] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const currency = localStorage.getItem("currency");
 
   useEffect(() => {
     setIsLoading(true);
