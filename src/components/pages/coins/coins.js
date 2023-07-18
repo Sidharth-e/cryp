@@ -29,7 +29,7 @@ const CoinGrid = ( {searchvalue} ) => {
 
   return (
     <>
-      <Heading name={"Crytpocoin"} />
+      <Heading name={"Cryptocoin"} />
       <div className="coin-grid">
         {isLoading || !coins ? (
           <Loader />
